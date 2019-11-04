@@ -22,8 +22,11 @@ namespace R5T.Sardinia
         {
             var configuration = services.GetConfiguration();
 
+            var configurationSectionName = typeof(TOptions).Name;
+            var configurationSection = configuration.GetSection(configurationSectionName);
+
             services
-                .Configure<TOptions>(configuration)
+                .Configure<TOptions>(configurationSection)
                 ;
 
             return services;
