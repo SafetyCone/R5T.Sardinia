@@ -15,9 +15,7 @@ namespace R5T.Sardinia
         /// </summary>
         public static IServiceCollection AddConfiguration(this IServiceCollection services, IConfiguration configuration)
         {
-            services
-                .AddSingleton<IConfiguration>(configuration)
-                ;
+            services.AddSingleton<IConfiguration>(configuration);
 
             return services;
         }
